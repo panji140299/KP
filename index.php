@@ -43,22 +43,22 @@
             </tr>
         </thead>
         <?php
-        include "querytable.php";
+        require_once "querytable.php";
         ?>
         <tbody>
             <tr>
                 <th scope="row">08.00-09.15</th>
                 <?php
                 
-                $a=1;
-                while ($a<=6){
-                    if (mysqli_num_rows(${'query'.$a})>0){?>
-                    <td data-toggle='modal' data-target='#modal5'><?php echo ${'data'.$a}['namadosen'];?></td>
+                $aa=1;
+                while ($aa<=6){
+                    if (mysqli_num_rows(${'query'.$aa})>0){?>
+                    <td data-toggle='modal' data-target='#modal5'><?php echo ${'data'.$aa}['namadosen'];?></td>
 
                     <?php }else{
                         echo "<td data-toggle='modal' data-target='#modal1'></td>";
                     }
-                    $a++;
+                    $aa++;
                 }
                 ?>
 
@@ -67,60 +67,60 @@
                 <th scope="row">09.15-10.30</th>
                 <?php
                 
-                $b=7;
-                while ($b<=12){
-                    if (mysqli_num_rows(${'query'.$b})>0){?>
-                    <td data-toggle='modal' data-target='#modal5'><?php echo ${'data'.$b}['namadosen'];?></td>
+                $bb=7;
+                while ($bb<=12){
+                    if (mysqli_num_rows(${'query'.$bb})>0){?>
+                    <td data-toggle='modal' data-target='#modal5'><?php echo ${'data'.$bb}['namadosen'];?></td>
 
                     <?php }else{
                         echo "<td data-toggle='modal' data-target='#modal1'></td>";
                     }
-                    $b++;
+                    $bb++;
                 }
                 ?>
             </tr>
             <tr>
                 <th scope="row">10.30-11.45</th>
                 <?php
-                $c=13;
-                while ($c<=18){
-                    if (mysqli_num_rows(${'query'.$c})>0){?>
-                    <td data-toggle='modal' data-target='#modal5'><?php echo ${'data'.$c}['namadosen'];?></td>
+                $cc=13;
+                while ($cc<=18){
+                    if (mysqli_num_rows(${'query'.$cc})>0){?>
+                    <td data-toggle='modal' data-target='#modal5'><?php echo ${'data'.$cc}['namadosen'];?></td>
 
                     <?php }else{
                         echo "<td data-toggle='modal' data-target='#modal1'></td>";
                     }
-                    $c++;
+                    $cc++;
                 }
                 ?>
             </tr>
             <tr>
                 <th scope="row">11.45-13.00</th>
                 <?php
-                $d=19;
-                while ($d<=24){
-                    if (mysqli_num_rows(${'query'.$d})>0){?>
-                    <td data-toggle='modal' data-target='#modal5'><?php echo ${'data'.$d}['namadosen'];?></td>
+                $dd=19;
+                while ($dd<=24){
+                    if (mysqli_num_rows(${'query'.$dd})>0){?>
+                    <td data-toggle='modal' data-target='#modal5'><?php echo ${'data'.$dd}['namadosen'];?></td>
 
                     <?php }else{
                         echo "<td data-toggle='modal' data-target='#modal1'></td>";
                     }
-                    $d++;
+                    $dd++;
                 }
                 ?>
             </tr>
             <tr>
                 <th scope="row">13.00-14.15</th>
                 <?php
-                $e=25;
-                while ($e<=30){
-                    if (mysqli_num_rows(${'query'.$e})>0){?>
-                    <td data-toggle='modal' data-target='#modal5'><?php echo ${'data'.$e}['namadosen'];?></td>
+                $ee=25;
+                while ($ee<=30){
+                    if (mysqli_num_rows(${'query'.$ee})>0){?>
+                    <td data-toggle='modal' data-target='#modal5'><?php echo ${'data'.$ee}['namadosen'];?></td>
 
                     <?php }else{
                         echo "<td data-toggle='modal' data-target='#modal1'></td>";
                     }
-                    $e++;
+                    $ee++;
                 }
                 ?>
             </tr>
@@ -325,6 +325,8 @@
                     <input type="text" name="kddosen" id="kddosen">
                     <input type="text" name="ruang" id="ruang">
                     <input type="text" name="waktu" id="waktu">
+                    <input type="text" name="nim" id="nim">
+                    
                     
                     <div class="modal-body">
                         <table id="tabeldosen" class="display" style="width:100%">
