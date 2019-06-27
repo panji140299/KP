@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
     <style>
     td:hover {
