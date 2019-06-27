@@ -275,6 +275,7 @@
 
 
               var $snim = $("#shownim").val(rowData[0])
+			  $('#nim').val(rowData[0])
 
               //ajax untuk menampilkan data otomatis
               $.ajax({
