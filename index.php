@@ -16,7 +16,7 @@
         border-color: #007bff;
         cursor: pointer;
     }
-    </style>
+</style>
 
 
 
@@ -367,342 +367,68 @@
 
 
         <!-- END DATA TABLE-->
-        <div class="table-responsive m-b-40">
-           <table  class="table table-borderless" border="2" width="50%">
-               <td valign="top"> 
-                <table class="table table-borderless table-data3" border="2" width="30%" id="tbl_listmhs">
-                    <thead>
-                        <tr>
-                            <form method="get" action="">
-                                <th colspan="2">
-                                    <input type="text" size="40" maxlength="40" name="searchnim" onkeyup="osdata()" id="sdata">
-                                </th>    
-                            </form>
+        <?php include('coba2.php');?> 
 
-                        </tr>
-                        <Tr>
-                            <th>NIM</th>
-                            <th>NAMA</th>
-                        </Tr>
-                    </thead>
-                    <tbody>
-                       <?php
-                       $query = "SELECT * FROM mhsakad" ;
-                       $hasil = mysqli_query($conn, $query);
-                       $tampil = mysqli_num_rows($hasil);
-
-                       if ( $tampil> 0) {
-                        while ( $data = mysqli_fetch_assoc($hasil)) {?>
-
-                        <tr>
-                            <td><?php echo $data['NIM']?></td>
-                            <td><?php echo $data['NAMA']?></td>
-                        </tr>
-                        <?php
-                    }
-                }
-                ?>
-            </tbody>
-        </table>
-    </td>
-    <td valign="top">
-
-        <table class="table table-borderless table-data3" border="0" width="30%" id="tbl_bio_mhs">
-            <tr>
-                <th colspan="4">
-                    BIODATA MAHASISWA <?php echo "$nim"; ?>
-                </th>
-            </tr>
-            <tr>
-                <td>
-                 NIM
-             </td>
-             <td>:</td>
-             <td>
-                <input type="text" size="25" maxlength="25" name="shownim" id="shownim" readonly>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                NAMA
-            </td>
-            <td>:</td>
-            <td colspan="2">
-                <input type="text" size="25" maxlength="25" name="shownama" id="shownama" readonly>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                KELAS
-            </td>
-            <td>:</td>
-            <td>
-                <input type="text" size="25" maxlength="25" name="showkelas">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                DOSEN WALI
-            </td>
-            <td>:</td>
-            <td colspan="2">
-                <input type="text" size="25" maxlength="25" name="showdoswal">
-            </td>
-        </tr>        
-        <tr>
-            <th colspan="4">
-                Tugas Akhir / Skripsi
-            </th>
-        </tr>
-        <tr>
-            <td>
-                Pembimbing 1 
-            </td>
-            <td>:</td>
-            <td colspan="2">
-                <input type="text" size="25" maxlength="25" name="showpem1">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Pembimbing 2 
-            </td>
-            <td>:</td>
-            <td colspan="2">
-                <input type="text" size="25" maxlength="25" name="showpem2">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Pengajuan
-            </td>
-            <td>:</td>
-            <td>
-                <input type="text" size="25" maxlength="25" name="showpengajuan">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Judul 
-            </td>
-            <td>:</td>
-            <td colspan="3">
-                <textarea cols="26" rows="6" name="showjudul" style="resize: none;"></textarea>
-            </td>
-        </tr>
-    </table>
-</td>
-<td valign="top" >
-    <table  class=""border="0" width="30%">
-        <tr>
-            <th colspan="6">
-                SEMINAR 
-            </th>
-        </tr>
-        <tr>
-            <td>
-                Seminar di
-            </td>
-            <td>:</td>
-            <td>
-                <input type="text" size="15" maxlength="15" name="showruangansem">
-            </td>
-            <td>
-                <input type="text" size="10" maxlength="10" name="showptanggalsem">
-            </td>
-            <td>
-                <input type="text" size="10" maxlength="10" name="showpejamsem">
-            </td>
-            <td>
-                <input type="button" name="?" value="?????" onclick="?????????">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Reviewer
-            </td>
-            <td>:</td>
-            <td colspan="">
-                <input type="text" size="25" maxlength="25" name="showreviewersem">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Nilai Seminar 
-            </td>
-            <td>:</td>
-            <td>
-                <input type="text" size="10" maxlength="10" name="shownilsem">
-            </td>
-            <td>
-                <input type="button" name="?" value="?????" onclick="?????????">
-            </td>
-        </tr>
-
-        <tr>
-            <th colspan="6">
-                SIDANG
-            </th>
-        </tr>
-        <tr>
-            <td>
-                Sidang di
-            </td>
-            <td>:</td>
-            <td>
-                <input type="text" size="15" maxlength="15" name="showruangansid">
-            </td>
-            <td>
-                <input type="text" size="10" maxlength="10" name="showptanggalsid">
-            </td>
-            <td>
-                <input type="text" size="10" maxlength="10" name="showpejamsid">
-            </td>
-            <td>
-                <input type="button" name="?" value="?????" onclick="?????????">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Penguji 1
-            </td>
-            <td>:</td>
-            <td colspan="3">
-                <input type="text" size="25" maxlength="25" name="showpengujisid1">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Penguji 2
-            </td>
-            <td>:</td>
-            <td colspan="3">
-                <input type="text" size="25" maxlength="25" name="showpengujisid2">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Penguji 3
-            </td>
-            <td>:</td>
-            <td colspan="3">
-                <input type="text" size="25" maxlength="25" name="showpengujisid3">
-            </td>
-        </tr>
-    </table>
-</td>
-</table>
-</div>
-
-<!-- Source Klik List Mahasiswa -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-        //searcing data nim & mhs
-        function osdata() {
-            var input, filter, table, tbody, tr, td, i, j, found;
-            input = document.getElementById("sdata");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("tbl_listmhs");
-            tbody = table.getElementsByTagName("tbody")[0];;
-            tr = tbody.getElementsByTagName("tr");
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td");
-                for (j = 0; j < td.length; j++) {
-                    if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
-                        found = true;
-                    }
-                }
-                if (found) {
-                    tr[i].style.display = "";
-                    found = false;
-                } else {
-                    tr[i].style.display = "none";
-                }
-            }
-        }
+        <!-- Source Klik List Mahasiswa -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
 
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+        <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                var table = $('#tabelseminar').DataTable({
+                    "paging": false,
+                    "ordering": false,
+                    "info": false,
+                    "searching": false
+
+                });
+                $('#tabelseminar tr').click(function() {
+                    var data = table.row(this).data()
+                    $('#waktu').val(data[0])
 
 
-        $( document ).ready(function() {
-
-          $("#tbl_listmhs tbody").on('click', 'tr', function() {
-              //get row contents into an array
-              var rowData = $(this).children("td").map(function() {
-               return $(this).text();}).get();
-
-              var $snim = $("#shownim").val(rowData[0])
-              $('#tbl_bio_mhs').load('showdata.php?nim=' + $snim)
-              {
-                  if(statusTxt=="success")
-                    $('.loading').remove();
-            };
-
-
-
-            
-        });       
-
-      });
-
-  </script>
-
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
-  <script>
-    $(document).ready(function() {
-        var table = $('#tabelseminar').DataTable({
-            "paging": false,
-            "ordering": false,
-            "info": false,
-            "searching": false
-
-        });
-        $('#tabelseminar tr').click(function() {
-            var data = table.row(this).data()
-            $('#waktu').val(data[0])
-
-
-        });
-        $('#tabelseminar td').click(function() {
-            var idx = table.column(this).index();
-            var nilai = $('thead tr th:eq(' + idx + ')').text()
-            $('#ruang').val(nilai)
-        });
-    });
-    $(document).ready(function() {
-        var table = $('#tabeldosen').DataTable();
-
-        $('#tabeldosen tbody').on('click', 'tr', function() {
-            if ($(this).hasClass('selected')) {
-                $(this).removeClass('selected');
-                $('#kddosen').val('')
-            } else if ($(this).removeClass('selected')) {
-                table.$('tr.selected').removeClass('selected');
-                $(this).addClass('selected');
-                var data = table.row(this).data()
-                $('#kddosen').val(data[0])
-            }
-        });
-        $('#btn_simpan').click(function() {
-            var data2 = $('.setseminar').serialize();
-            $.ajax({
-                type: 'POST',
-                url: "setseminar.php",
-                data: data2,
-                success: function() {
-                    $('#modal2').modal('hide');
-                }
+                });
+                $('#tabelseminar td').click(function() {
+                    var idx = table.column(this).index();
+                    var nilai = $('thead tr th:eq(' + idx + ')').text()
+                    $('#ruang').val(nilai)
+                });
             });
-        });
-    });
-    $("#bstn_simpan").click(function() {
+            $(document).ready(function() {
+                var table = $('#tabeldosen').DataTable();
+
+                $('#tabeldosen tbody').on('click', 'tr', function() {
+                    if ($(this).hasClass('selected')) {
+                        $(this).removeClass('selected');
+                        $('#kddosen').val('')
+                    } else if ($(this).removeClass('selected')) {
+                        table.$('tr.selected').removeClass('selected');
+                        $(this).addClass('selected');
+                        var data = table.row(this).data()
+                        $('#kddosen').val(data[0])
+                    }
+                });
+                $('#btn_simpan').click(function() {
+                    var data2 = $('.setseminar').serialize();
+                    $.ajax({
+                        type: 'POST',
+                        url: "setseminar.php",
+                        data: data2,
+                        success: function() {
+                            $('#modal2').modal('hide');
+                        }
+                    });
+                });
+            });
+            $("#bstn_simpan").click(function() {
         //ambil data dan set ke variable
         var $row = $(this).closest("tr"),
         $kolom1 = $row.find("td:nth-child(0)")
