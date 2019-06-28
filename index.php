@@ -56,7 +56,7 @@
                     if (mysqli_num_rows(${'query'.$aa})>0){?>
                 <td data-toggle='modal' data-target='#modal5' id="tdisi">
                     <?php echo ${'data'.$aa}['namadosen'];
-                    echo "<input type='text' name='nimm".$aa."' id='nimm".$aa."' value='".${'data'.$aa}['NIM']."'>";
+                    echo "<input type='hidden' name='nimm".$aa."' id='nimm".$aa."' value='".${'data'.$aa}['NIM']."'>";
                     ?>
                 
                 </td>
@@ -92,7 +92,7 @@
                 while ($cc<=18){
                     if (mysqli_num_rows(${'query'.$cc})>0){?>
                 <td data-toggle='modal' data-target='#modal5'><?php echo ${'data'.$cc}['namadosen'];
-                echo "<input type='text' name='nimm' id='nimm' value='".${'data'.$cc}['NIM']."'>";
+                echo "<input type='hidden' name='nimm' id='nimm' value='".${'data'.$cc}['NIM']."'>";
                 ?>
                 </td>
 
@@ -216,10 +216,10 @@
     <!-- Modal -->
     <!-- form hidden untuk input atau edit seminar -->
     <form method="POST" class="setseminar">
-        <input type="text" name="kddosen" id="kddosen">
-        <input type="text" name="ruang" id="ruang">
-        <input type="text" name="waktu" id="waktu">
-        <input type="text" name="nim" id="nim">
+        <input type="hidden" name="kddosen" id="kddosen">
+        <input type="hidden" name="ruang" id="ruang">
+        <input type="hidden" name="waktu" id="waktu">
+        <input type="hidden" name="nim" id="nim">
         <div class="modal fade" tabindex="-1" role="dialog" id="modal1">
             <div class="modal-dialog modal-custom" role="document">
                 <div class="modal-content">
