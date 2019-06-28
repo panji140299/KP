@@ -31,7 +31,6 @@
         <h6 class="text-center">TAHUN AKADEMIK 2018/2019 SEMESTER GENAP</h6>
     </span>
     <input type="date" value="<?php echo date('Y-m-d'); ?>" />
-    <input type="hidden" name="nim" id="nimm">
     <table class="table-sm table-bordered" style="width:100%" id="tabelseminar">
         <thead>
             <tr>
@@ -55,7 +54,12 @@
                 $aa=1;
                 while ($aa<=6){
                     if (mysqli_num_rows(${'query'.$aa})>0){?>
-                <td data-toggle='modal' data-target='#modal5'><?php echo ${'data'.$aa}['namadosen'];?></td>
+                <td data-toggle='modal' data-target='#modal5' id="tdisi">
+                    <?php echo ${'data'.$aa}['namadosen'];
+                    echo "<input type='text' name='nimm".$aa."' id='nimm".$aa."' value='".${'data'.$aa}['NIM']."'>";
+                    ?>
+                
+                </td>
 
                 <?php }else{
                         echo "<td id='tdkosong'></td>";
@@ -87,7 +91,10 @@
                 $cc=13;
                 while ($cc<=18){
                     if (mysqli_num_rows(${'query'.$cc})>0){?>
-                <td data-toggle='modal' data-target='#modal5'><?php echo ${'data'.$cc}['namadosen'];?></td>
+                <td data-toggle='modal' data-target='#modal5'><?php echo ${'data'.$cc}['namadosen'];
+                echo "<input type='text' name='nimm' id='nimm' value='".${'data'.$cc}['NIM']."'>";
+                ?>
+                </td>
 
                 <?php }else{
                         echo "<td id='tdkosong'></td>";
@@ -209,10 +216,10 @@
     <!-- Modal -->
     <!-- form hidden untuk input atau edit seminar -->
     <form method="POST" class="setseminar">
-        <input type="hidden" name="kddosen" id="kddosen">
-        <input type="hidden" name="ruang" id="ruang">
-        <input type="hidden" name="waktu" id="waktu">
-        <input type="hidden" name="nim" id="nim">
+        <input type="text" name="kddosen" id="kddosen">
+        <input type="text" name="ruang" id="ruang">
+        <input type="text" name="waktu" id="waktu">
+        <input type="text" name="nim" id="nim">
         <div class="modal fade" tabindex="-1" role="dialog" id="modal1">
             <div class="modal-dialog modal-custom" role="document">
                 <div class="modal-content">
@@ -403,7 +410,7 @@
             "searching": false
 
         });
-        var nim = $('#nimm').val('');
+        var nim = $('#nim').val('');
         $('#tabelseminar #tdkosong').click(function() {
             if (nim.val() == '') {
                 alert('NIM mahasiswa belum di klik!');
@@ -414,6 +421,15 @@
                 jQuery.noConflict();
                 $('#modal1').modal('show');
             }
+        });
+        $('#tabelseminar #tdisi').click(function() {
+                var idx = table.column(this).index();
+                var nilai = $('thead tr th:eq(' + idx + ')').text()
+                //untuk mengambil value di dalam kolom yg bertipe elemen "<input>"
+                var nim = $('input', this).val()
+                $('#ruang').val(nilai)
+                $('#nim').val(nim)
+                
         });
         $('#tabelseminar tr').click(function() {
             var data = table.row(this).data()

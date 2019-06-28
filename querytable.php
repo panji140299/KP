@@ -25,7 +25,7 @@
     
     while ($a<=6) {
         ${'sql'.$a}    = "SELECT d.*,concat(d.NAMA,d.GLR2)as namadosen,t.*,m.* FROM dosen d,ta_list t,mhsakad m 
-        WHERE  t.KD_PENGUJI1 = d.KDDOSEN and t.WKT_SEMINAR = '08.00-09.15' and t.RUANG_SEMINAR = ${'rr'.$a}";
+        WHERE  t.KD_REVIEWER = d.KDDOSEN and t.NIM = m.NIM and t.WKT_SEMINAR = '08.00-09.15' and t.RUANG_SEMINAR = ${'rr'.$a}";
         ${'query'.$a} = mysqli_query($conn, ${'sql'.$a});
         ${'data'.$a}   = mysqli_fetch_assoc(${'query'.$a});
         $a++;
@@ -33,7 +33,7 @@
     for ($a=1;$a<=6;$a++) {
         while ($b<=12){
             ${'sql'.$b}    = "SELECT d.*,concat(d.NAMA,d.GLR2)as namadosen,t.*,m.* FROM dosen d,ta_list t,mhsakad m 
-            WHERE  t.KD_PENGUJI1 = d.KDDOSEN and t.WKT_SEMINAR = '09.15-10.30' and t.RUANG_SEMINAR = ${'rr'.$a}";
+            WHERE  t.KD_REVIEWER = d.KDDOSEN and t.NIM = m.NIM and t.WKT_SEMINAR = '09.15-10.30' and t.RUANG_SEMINAR = ${'rr'.$a}";
             ${'query'.$b} = mysqli_query($conn, ${'sql'.$b});
             ${'data'.$b}   = mysqli_fetch_assoc(${'query'.$b});
             $b++;
@@ -44,7 +44,7 @@
     for ($a=1;$a<=6;$a++){
         while ($c<=18) {
             ${'sql'.$c}    = "SELECT d.*,concat(d.NAMA,d.GLR2)as namadosen,t.*,m.* FROM dosen d,ta_list t,mhsakad m 
-            WHERE  t.KD_PENGUJI1 = d.KDDOSEN and t.WKT_SEMINAR = '10.30-11.45' and t.RUANG_SEMINAR = ${'rr'.$a}";
+            WHERE  t.KD_REVIEWER = d.KDDOSEN and t.NIM = m.NIM and t.WKT_SEMINAR = '10.30-11.45' and t.RUANG_SEMINAR = ${'rr'.$a}";
             ${'query'.$c} = mysqli_query($conn, ${'sql'.$c});
             ${'data'.$c}   = mysqli_fetch_assoc(${'query'.$c});
             $c++;
@@ -55,7 +55,7 @@
     for ($a=1;$a<=6;$a++){
     while ($d<=24) {
         ${'sql'.$d}    = "SELECT d.*,concat(d.NAMA,d.GLR2)as namadosen,t.*,m.* FROM dosen d,ta_list t,mhsakad m 
-        WHERE  t.KD_PENGUJI1 = d.KDDOSEN and t.WKT_SEMINAR = '11.45-13.00' and t.RUANG_SEMINAR = ${'rr'.$a}";
+        WHERE  t.KD_REVIEWER = d.KDDOSEN and t.WKT_SEMINAR = '11.45-13.00' and t.RUANG_SEMINAR = ${'rr'.$a}";
         ${'query'.$d} = mysqli_query($conn, ${'sql'.$d});
         ${'data'.$d}   = mysqli_fetch_assoc(${'query'.$d});
         $d++;
@@ -66,7 +66,7 @@
     for ($a=1;$a<=6;$a++){
     while ($e<=30) {
         ${'sql'.$e}    = "SELECT d.*,concat(d.NAMA,d.GLR2)as namadosen,t.*,m.* FROM dosen d,ta_list t,mhsakad m 
-        WHERE  t.KD_PENGUJI1 = d.KDDOSEN and t.WKT_SEMINAR = '13.00-14.15' and t.RUANG_SEMINAR = ${'rr'.$a}";
+        WHERE  t.KD_REVIEWER = d.KDDOSEN and t.WKT_SEMINAR = '13.00-14.15' and t.RUANG_SEMINAR = ${'rr'.$a}";
         ${'query'.$e} = mysqli_query($conn, ${'sql'.$e});
         ${'data'.$e}   = mysqli_fetch_assoc(${'query'.$e});
         $e++;
@@ -77,7 +77,7 @@
     for ($a=1;$a<=6;$a++){
     while ($f<=36) {
         ${'sql'.$f}    = "SELECT d.*,concat(d.NAMA,d.GLR2)as namadosen,t.*,m.* FROM dosen d,ta_list t,mhsakad m 
-        WHERE  t.KD_PENGUJI1 = d.KDDOSEN and t.WKT_SEMINAR = '14.15-15.30' and t.RUANG_SEMINAR = ${'rr'.$a}";
+        WHERE  t.KD_REVIEWER = d.KDDOSEN and t.WKT_SEMINAR = '14.15-15.30' and t.RUANG_SEMINAR = ${'rr'.$a}";
         ${'query'.$f} = mysqli_query($conn, ${'sql'.$f});
         ${'data'.$f}   = mysqli_fetch_assoc(${'query'.$f});
         $f++;
@@ -88,7 +88,7 @@
     for ($a=1;$a<=6;$a++){
     while ($g<=42) {
         ${'sql'.$g}    = "SELECT d.*,concat(d.NAMA,d.GLR2)as namadosen,t.*,m.* FROM dosen d,ta_list t,mhsakad m 
-        WHERE  t.KD_PENGUJI1 = d.KDDOSEN and t.WKT_SEMINAR = '15.30-16.45' and t.RUANG_SEMINAR = ${'rr'.$a}";
+        WHERE  t.KD_REVIEWER = d.KDDOSEN and t.WKT_SEMINAR = '15.30-16.45' and t.RUANG_SEMINAR = ${'rr'.$a}";
         ${'query'.$g} = mysqli_query($conn, ${'sql'.$g});
         ${'data'.$g}   = mysqli_fetch_assoc(${'query'.$g});
         $g++;
@@ -99,7 +99,7 @@
     for ($a=1;$a<=6;$a++){
     while ($h<=48) {
         ${'sql'.$h}    = "SELECT d.*,concat(d.NAMA,d.GLR2)as namadosen,t.*,m.* FROM dosen d,ta_list t,mhsakad m 
-        WHERE  t.KD_PENGUJI1 = d.KDDOSEN and t.WKT_SEMINAR = '16.45-18.00' and t.RUANG_SEMINAR = ${'rr'.$a}";
+        WHERE  t.KD_REVIEWER = d.KDDOSEN and t.WKT_SEMINAR = '16.45-18.00' and t.RUANG_SEMINAR = ${'rr'.$a}";
         ${'query'.$h} = mysqli_query($conn, ${'sql'.$h});
         ${'data'.$h}   = mysqli_fetch_assoc(${'query'.$h});
         $h++;
@@ -110,7 +110,7 @@
     for ($a=1;$a<=6;$a++){
     while ($i<=54) {
         ${'sql'.$i}    = "SELECT d.*,concat(d.NAMA,d.GLR2)as namadosen,t.*,m.* FROM dosen d,ta_list t,mhsakad m 
-        WHERE  t.KD_PENGUJI1 = d.KDDOSEN and t.WKT_SEMINAR = '18.00-19.15' and t.RUANG_SEMINAR = ${'rr'.$a}";
+        WHERE  t.KD_REVIEWER = d.KDDOSEN and t.WKT_SEMINAR = '18.00-19.15' and t.RUANG_SEMINAR = ${'rr'.$a}";
         ${'query'.$i} = mysqli_query($conn, ${'sql'.$i});
         ${'data'.$i}   = mysqli_fetch_assoc(${'query'.$i});
         $i++;
@@ -121,7 +121,7 @@
     for ($a=1;$a<=6;$a++){
     while ($j<=60) {
         ${'sql'.$j}    = "SELECT d.*,concat(d.NAMA,d.GLR2)as namadosen,t.*,m.* FROM dosen d,ta_list t,mhsakad m 
-        WHERE  t.KD_PENGUJI1 = d.KDDOSEN and t.WKT_SEMINAR = '19.15-20.30' and t.RUANG_SEMINAR = ${'rr'.$a}";
+        WHERE  t.KD_REVIEWER = d.KDDOSEN and t.WKT_SEMINAR = '19.15-20.30' and t.RUANG_SEMINAR = ${'rr'.$a}";
         ${'query'.$j} = mysqli_query($conn, ${'sql'.$j});
         ${'data'.$j}   = mysqli_fetch_assoc(${'query'.$j});
         $j++;

@@ -298,8 +298,7 @@
 
             var $snim = $("#shownim").val(rowData[0])
             $('#nim').val(rowData[0])
-            $('#nimm').val(rowData[0])
-
+            
             //ajax untuk menampilkan data otomatis
             $.ajax({
                     url: 'ajax_isiot_bio.php',
