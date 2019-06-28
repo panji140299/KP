@@ -472,6 +472,9 @@
         //contoh aja setvalue lagi males ngetik nya :)
         alert('#idinput').val($kolom1.text());
     });
+    $('button.close').click(function(){
+        $('#nim').val('');
+    });
     </script>
 </body>
 
